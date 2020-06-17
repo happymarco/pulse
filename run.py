@@ -80,3 +80,5 @@ for ref_im, ref_im_name in dataloader:
             for i in range(kwargs["batch_size"]):
                 toPIL(HR[i].cpu().detach().clamp(0, 1)).save(
                     out_path / f"{ref_im_name[i]}.png")
+                toPIL(LR[i].cpu().detach().clamp(0, 1)).save(
+                    out_path / f"{ref_im_name[i]}_L.png")
